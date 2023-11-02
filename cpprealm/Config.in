@@ -1,0 +1,30 @@
+menu "Configuration"
+	depends on PACKAGE_libcpprealm
+
+config REALM_ENCRYPTION
+	bool
+	prompt	"Encryption"
+	default y
+
+config REALM_SYNC
+	bool
+	prompt	"Atlas Device Sync client"
+	default y
+
+config REALM_GEOSPATIAL
+	bool
+	prompt	"Geospatial queries"
+	default n
+
+config REALM_SHARED_LIBS
+	bool
+	prompt	"Shared library"
+	default y
+
+config REALM_LTO
+	depends on REALM_SHARED_LIBS
+	bool
+	prompt	"Link-time optimization"
+	default y
+
+endmenu
